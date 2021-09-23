@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title  %}
+<title>register Page</title>
+{% endblock title %}
+
+
+{% block body %}
+{%for message in messages%}
+{{message}}
+{% endfor %}
+<h2 class='text-center my-3'>Registration Form</h2>
+<div class="container">
+<form class="row g-3" action = 'register' method='POST'>
+    {% csrf_token %}
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">First Name:</label>
+    <input type="text" class="form-control" id="firstname" name='firstname'placeholder="First Name">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Last Name:</label>
+    <input type="text" class="form-control" id="lastname" name='lastname'placeholder="Last Name">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">User Name:</label>
+    <input type="text" class="form-control" id="username" name='username' placeholder="User Name">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Email">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Password 1:</label>
+    <input type="password" class="form-control" id="Password1" name='pass1'>
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Password 2:</label>
+   <input type="password" class="form-control" id="Password2" name='pass2'>
+  </div>
+  
+ 
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
+</form>
+</div>
+{% endblock body %}

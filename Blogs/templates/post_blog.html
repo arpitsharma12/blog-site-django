@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Post Blog</title>
+{% endblock title %}
+{% block body %}
+{%for message in messages%}
+{{message}}
+{% endfor %}
+<h1 class='text-center' my-3>POST BLOG</h1>
+<div class="container">
+<form action ='post_blog' method ='POST'>
+{% csrf_token %}
+ <div class="col-12">
+  <label for="inputAddress" class="form-label">Title:</label>
+  <input type="text" class="form-control" id="title" name='title' placeholder="Title..">
+ </div>
+ <div class="col-md-12">
+  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+  <textarea class="form-control" id="Description" name='Description' rows="3"></textarea>
+ </div>
+
+<input type='submit' value='POST' class='btn btn-primary'>
+
+</form>
+</div>
+{% endblock body %}
